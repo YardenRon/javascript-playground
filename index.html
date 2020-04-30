@@ -3,8 +3,24 @@
 <head>
     <meta charset="utf-8">
     <title> Javascript Playground </title>
+    <script> console.log("Some code in the head tag") </script>
 </head>
 <body>
     <div> Hello World </div>
+    <div id="iframe-container"></div>
+    
+    <script> console.log("Some code in the body tag") </script>
+    <script> 
+        window.onload = (event) => {
+            console.log("Finished loading the entire page");
+        };
+
+        window.onclick = (event) => {
+            console.log("Someone clicked on the page");
+            const iframe = document.createElement('iframe');
+            iframe.src="miniApp.html";
+            document.getElementById("iframe-container").appendChild(iframe);
+        };
+    </script>
 </body>
 </html>
